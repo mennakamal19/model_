@@ -11,21 +11,19 @@ class SpeechToTextScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       floatingActionButton: AvatarGlow(
-        endRadius: 50.5,
+        endRadius: 50.0,
         animate: true,
         duration: const Duration(milliseconds: 2000),
         glowColor: const Color(0X4DB6ACFF),
         repeat: true,
         repeatPauseDuration: const Duration(milliseconds:100),
         showTwoGlows: true,
-        child: GetBuilder<SpeechToTextController>(
-          builder: (controller) => GestureDetector(
-            onTap: () => controller.startSpeaking(),
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: Colors.indigo,
-              child: Icon(controller.is_Listening.value?Icons.stop:Icons.mic_none_rounded),
-            ),
+        child:GestureDetector(
+          onTap: () => controller.startSpeaking(),
+          child: CircleAvatar(
+            radius: 25,
+            backgroundColor: Colors.indigo,
+            child: Obx(() => Icon(controller.isListening.value?Icons.stop:Icons.mic_none_rounded)),
           ),
         ),
       ),
@@ -41,15 +39,13 @@ class SpeechToTextScreen extends StatelessWidget {
                 color: Colors.white,
                     borderRadius: BorderRadius.circular(20)
               ),
-              child: GetBuilder<SpeechToTextController>(
-                builder: (controller) =>Text(controller.text,
+              child: Obx(() => Text(controller.text.value,
                 style: const TextStyle(fontSize: 18,
-                color: Colors.black87,
-                fontWeight: FontWeight.w600
+                    color: Colors.black87,
+                    fontWeight: FontWeight.w600
                 ),
-              ),
-              ),
-        ),
+              ))
+            ),
           ),
         ),
       ),

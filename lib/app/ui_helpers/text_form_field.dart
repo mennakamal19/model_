@@ -21,6 +21,10 @@ Widget defaultFormField({
           },
           decoration: InputDecoration(
               hintText: hint,
+              hintStyle: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w400
+              ),
               contentPadding: const EdgeInsets.symmetric(horizontal: 42,vertical: 20),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),

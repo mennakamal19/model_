@@ -13,8 +13,8 @@ Widget defaultButton({
               backgroundColor: Colors.indigo
           ),
           onPressed: (){ press; },
-          child: Text(
-            text,style: const TextStyle(
+          child: Text(text,
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.white),
           )),
