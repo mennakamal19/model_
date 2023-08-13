@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:speech_model/app/modules/controllers/typing_diagnostic_controller.dart';
-import 'package:speech_model/app/ui_helpers/default_button.dart';
-import 'package:speech_model/app/ui_helpers/text_form_field.dart';
 
 class TypingDiagnostic extends StatelessWidget {
 
