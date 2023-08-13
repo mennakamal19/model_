@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:speech_model/app/modules/controllers/typing_diagnostic_controller.dart';
+import 'package:speech_model/prescription/controllers/typing_diagnostic_controller.dart';
+import 'package:speech_model/prescription/views/ui_helpers/default_button.dart';
+import 'package:speech_model/prescription/views/ui_helpers/text_form_field.dart';
 
-class TypingDiagnostic extends StatelessWidget {
+
+class TypingDiagnostic extends GetView<TypingDiagnosticController> {
 
   TypingDiagnosticController controller = Get.put(TypingDiagnosticController());
   @override

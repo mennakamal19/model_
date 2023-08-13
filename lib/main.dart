@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:speech_model/app/modules/views/tab_bar.dart';
+import 'package:speech_model/prescription/binding/tab_binding.dart';
+import 'package:speech_model/prescription/views/tab_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      initialBinding: TabBinding(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

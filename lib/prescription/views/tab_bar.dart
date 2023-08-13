@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:speech_model/app/modules/controllers/tab_bar_controller.dart';
-import 'package:speech_model/app/modules/views/speech_to_text.dart';
-import 'package:speech_model/app/modules/views/typing_diagnostic.dart';
+import 'package:speech_model/prescription/controllers/tab_bar_controller.dart';
+import 'package:speech_model/prescription/views/drawing.dart';
+import 'package:speech_model/prescription/views/speech_to_text.dart';
+import 'package:speech_model/prescription/views/typing_diagnostic.dart';
 
-class TabBarScreen extends StatelessWidget {
+class TabBarScreen extends GetView<TabBarController> {
 
-  TabBarController controller = Get.put(TabBarController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class TabBarScreen extends StatelessWidget {
         controller: controller.tabController,
         children: [
           SpeechToTextScreen(),
-          TypingDiagnostic(),
+          Drawing(),
           TypingDiagnostic(),
         ],
       ),

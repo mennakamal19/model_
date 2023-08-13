@@ -1,11 +1,10 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:speech_model/app/modules/controllers/speech_to_text_controller.dart';
+import 'package:speech_model/prescription/controllers/speech_to_text_controller.dart';
 
-class SpeechToTextScreen extends StatelessWidget {
+class SpeechToTextScreen extends GetView<SpeechToTextController> {
 
-  SpeechToTextController controller = Get.put(SpeechToTextController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
