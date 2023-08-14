@@ -42,6 +42,7 @@ class TabBarScreen extends GetView<TabBarController> {
         ),
       ),
       body: TabBarView(
+        physics: NeverScrollableScrollPhysics(),
         controller: controller.tabController,
         children: [
           SpeechToTextScreen(),

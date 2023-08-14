@@ -29,18 +29,21 @@ class Drawing extends GetView<DrawingController> {
               child: const Icon(Icons.send)),
         ],
       ),
-      body: Obx(() => GestureDetector(
-        onPanStart: (_)  => controller.startDrawing(),
-        onPanUpdate: (details) => controller.addPoint(details.localPosition),
-        onPanEnd: (_) => controller.stopDrawing(),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: CustomPaint(
-            painter: MyPainter(points: controller.points),
+      body: Obx((){
+        final lastDrawer  = controller.drawer.isNotEmpty?controller.drawer.last:<Offset>[];
+        return GestureDetector(
+          onPanStart: (_)  => controller.startDrawing(),
+          onPanUpdate: (details) => controller.addPoint(details.localPosition),
+          onPanEnd: (_) => controller.stopDrawing(),
+          child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: CustomPaint(
+                painter: MyPainter(points: lastDrawer),
+              )
           ),
-        ),
-      )),
+        );
+      })
     );
   }
 }

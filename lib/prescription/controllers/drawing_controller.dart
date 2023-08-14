@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 
 class DrawingController extends GetxController {
 
+  final List<RxList<Offset>> drawer = <RxList<Offset>>[].obs;
    final points = <Offset>[].obs;
    final undoList = <List<Offset>>[].obs;
    final redoList = <List<Offset>>[].obs;
@@ -11,9 +12,12 @@ class DrawingController extends GetxController {
 
   void addPoint(Offset point) {
     points.add(point);
+    //drawer.add(points);
+    print('point added to points');
   }
 
   void clearPoints() {
+    drawer.clear();
     points.clear();
     undoList.clear();
     redoList.clear();
@@ -21,10 +25,17 @@ class DrawingController extends GetxController {
 
    void startDrawing() {
      isDrawing.value = true;
+     points.clear();
+
+     print('start new draw');
    }
 
    void stopDrawing() {
      isDrawing.value = false;
+     drawer.add(points);
+     //points.clear();
+     print('stooooooooooooooooooop');
+     print(drawer);
    }
 
   void undo() {
